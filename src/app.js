@@ -7,7 +7,7 @@ const path = require('path');
 
 require('dotenv').config();
 
-const inputFilePath = path.resolve(process.cwd(), "export.properties");
+const inputFilePath = path.resolve(process.cwd(), "export.json");
 const middlewares = require('./middlewares');
 const api = require('./api');
 
@@ -26,7 +26,8 @@ app.get('/', (req, res) => {
     }  
     else {
       const map = JSON.parse(data);
-      res.json({map});
+      console.log(map);
+      res.json(map);
     }
   });
 });
